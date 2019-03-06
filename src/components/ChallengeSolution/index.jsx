@@ -7,7 +7,10 @@ import { AppContext } from "../../AppContext";
 const getChallengeRaw = num =>
     require(`!raw-loader!../../challenges/${num}.js`);
 const getChallenge = num =>
-    require(`../../challenges/${num}.js`)[`dcpChallenge${num}`]();
+    require(`../../challenges/${num}.js`)[`dcpChallenge${num}`](
+        [10, 15, 3, 7],
+        17
+    );
 
 export const ChallengeSolutionComponent = () => (
     <AppContext.Consumer>

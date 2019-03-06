@@ -1,62 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./tabs.scss";
 import { TabComponent } from "../Tab/Tab";
-import { AppContext } from "../../../AppContext";
+import { contextConsumer } from "../../hoc/context-consumer.hoc";
 
-export class TabsComponent extends React.Component {
-    constructor(props) {
-        super(props);
+export const Tabs = ({ selectedTab }) => {
+    const [tabs] = useState(2);
+    const [tabPage, setTabPage] = useState(0);
 
-        this.state = {
-            tabs: 33,
-            tabPage: 0
-        };
-    }
+    const prevPage = _ => (tabPage < 0 ? setTabPage(tabPage + 1000) : null);
 
-    prevPage = () =>
-        this.setState(prevState => ({
-            tabPage:
-                prevState.tabPage < 0
-                    ? prevState.tabPage + 1000
-                    : prevState.tabPage
-        }));
+    const nextPage = _ =>
+        Math.abs(tabPage) < Math.floor(tabs / 10) * 1000
+            ? setTabPage(tabPage - 1000)
+            : null;
 
-    nextPage = () =>
-        this.setState(prevState => ({
-            tabPage:
-                Math.abs(prevState.tabPage) <
-                Math.floor(prevState.tabs / 10) * 1000
-                    ? prevState.tabPage - 1000
-                    : prevState.tabPage
-        }));
+    return (
+        <div className="tabs">
+            {tabs > 10 && (
+                <div
+                    className="tabs__arrow tabs__arrow--left"
+                    onClick={prevPage}
+                />
+            )}
+            {[...Array(tabs).keys()].map((e, i) => (
+                <TabComponent
+                    key={`tab${i}`}
+                    i={i + 1}
+                    selected={selectedTab}
+                    style={{
+                        transform: `translateX(${tabPage}%)`
+                    }}
+                />
+            ))}
+            {tabs > 10 && (
+                <div
+                    className="tabs__arrow tabs__arrow--right"
+                    onClick={nextPage}
+                />
+            )}
+        </div>
+    );
+};
 
-    render() {
-        return (
-            <AppContext.Consumer>
-                {({ selectedTab }) => (
-                    <div className="tabs">
-                        <div
-                            className="tabs__arrow tabs__arrow--left"
-                            onClick={this.prevPage}
-                        />
-                        {[...Array(this.state.tabs).keys()].map((e, i) => (
-                            <TabComponent
-                                i={i + 1}
-                                selected={selectedTab}
-                                style={{
-                                    transform: `translateX(${
-                                        this.state.tabPage
-                                    }%)`
-                                }}
-                            />
-                        ))}
-                        <div
-                            className="tabs__arrow tabs__arrow--right"
-                            onClick={this.nextPage}
-                        />
-                    </div>
-                )}
-            </AppContext.Consumer>
-        );
-    }
-}
+export const TabsComponent = contextConsumer(Tabs);
