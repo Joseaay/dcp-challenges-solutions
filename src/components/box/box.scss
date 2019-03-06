@@ -1,7 +1,10 @@
 .box {
     width: 95vw;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
     overflow: hidden;
+    &__content {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 30px;
+    }
 }

@@ -8,7 +8,7 @@ export class TabsComponent extends React.Component {
 
         this.state = {
             selected: 1,
-            tabs: 65,
+            tabs: 33,
             tabPage: 0
         };
     }
@@ -38,7 +38,7 @@ export class TabsComponent extends React.Component {
                 <div
                     className="tabs__arrow tabs__arrow--left"
                     onClick={this.prevPage}
-                >{`<-`}</div>
+                />
                 {[...Array(this.state.tabs).keys()].map((e, i) => (
                     <TabComponent
                         i={i + 1}
@@ -52,7 +52,7 @@ export class TabsComponent extends React.Component {
                 <div
                     className="tabs__arrow tabs__arrow--right"
                     onClick={this.nextPage}
-                >{`->`}</div>
+                />
             </div>
         );
     }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.scss";
-import { BoxComponent } from "./components/box/Box";
+import { BoxComponent } from "./components/Box/Box";
 
 class App extends Component {
     render() {
