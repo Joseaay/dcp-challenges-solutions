@@ -1,13 +1,13 @@
 import React from "react";
 import "./tabs.scss";
 import { TabComponent } from "../Tab/Tab";
+import { AppContext } from "../../../AppContext";
 
 export class TabsComponent extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            selected: 1,
             tabs: 33,
             tabPage: 0
         };
@@ -30,30 +30,33 @@ export class TabsComponent extends React.Component {
                     : prevState.tabPage
         }));
 
-    selectTab = i => this.setState({ selected: i });
-
     render() {
         return (
-            <div className="tabs">
-                <div
-                    className="tabs__arrow tabs__arrow--left"
-                    onClick={this.prevPage}
-                />
-                {[...Array(this.state.tabs).keys()].map((e, i) => (
-                    <TabComponent
-                        i={i + 1}
-                        selected={this.state.selected}
-                        onClick={this.selectTab}
-                        style={{
-                            transform: `translateX(${this.state.tabPage}%)`
-                        }}
-                    />
-                ))}
-                <div
-                    className="tabs__arrow tabs__arrow--right"
-                    onClick={this.nextPage}
-                />
-            </div>
+            <AppContext.Consumer>
+                {({ selectedTab }) => (
+                    <div className="tabs">
+                        <div
+                            className="tabs__arrow tabs__arrow--left"
+                            onClick={this.prevPage}
+                        />
+                        {[...Array(this.state.tabs).keys()].map((e, i) => (
+                            <TabComponent
+                                i={i + 1}
+                                selected={selectedTab}
+                                style={{
+                                    transform: `translateX(${
+                                        this.state.tabPage
+                                    }%)`
+                                }}
+                            />
+                        ))}
+                        <div
+                            className="tabs__arrow tabs__arrow--right"
+                            onClick={this.nextPage}
+                        />
+                    </div>
+                )}
+            </AppContext.Consumer>
         );
     }
 }

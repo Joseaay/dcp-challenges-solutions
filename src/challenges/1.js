@@ -1,3 +1,1 @@
-const hello = () => {
-    console.log("hello");
-};
+export const dcpChallenge1 = () => "hello";
