@@ -1,21 +1,25 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import { findArguments } from "./find-arguments";
 const inputTypes = (inputType, index, updateFunc, inputs) => {
     return (
-        <Fragment>
-            {
+        <div className="challenge-solution__arguments-inputs">
+            <label className="challenge-solution__label">
                 {
-                    array: <label>array</label>,
-                    number: <label>number</label>
-                }[inputType]
-            }
+                    {
+                        array:
+                            "ARRAY: elements separated by comas, e.g. 1,2,3,4 => [1,2,3,4]",
+                        number: "NUMBER: single number, e.g. 1 => Number(1)"
+                    }[inputType]
+                }
+            </label>
             <input
+                className="challenge-solution__input"
                 onChange={e =>
                     updateFunc({ ...inputs, [index]: e.target.value })
                 }
             />
-        </Fragment>
+        </div>
     );
 };
 

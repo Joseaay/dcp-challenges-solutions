@@ -3,4 +3,19 @@
     &__subtitle {
         color: black;
     }
+    &__arguments-inputs {
+        display: flex;
+        flex-direction: column;
+    }
+    &__input {
+        width: 150px;
+    }
+    &__label {
+        margin: 5px 0 3px 0;
+        font-size: 13px;
+    }
+    &__button {
+        margin-top: 10px;
+        width: 100px;
+    }
 }

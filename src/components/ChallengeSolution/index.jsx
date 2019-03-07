@@ -49,13 +49,18 @@ export const ChallengeSolutionComponent = () => {
                     {generateInputFields(value.selectedTab, setInputs, inputs)}
                     <button
                         type="button"
+                        className="challenge-solution__button"
                         onClick={() => evaluateFunction(value)}
                     >
                         Send
                     </button>
-                    {`Result: ${result.result}`}
-                    {`Time: ${result.time}`}
-                    {`Error: ${result.error}`}
+                    <h4>Results</h4>
+
+                    {result.result &&
+                        !result.error &&
+                        `Result: ${result.result}`}
+                    {result.time && !result.error && `Time: ${result.time}`}
+                    {result.error && `${result.error}`}
                 </div>
             )}
         </AppContext.Consumer>

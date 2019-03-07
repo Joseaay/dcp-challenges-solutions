@@ -11,9 +11,9 @@
 // If our input was [1, 2, 3, 4, 5], the expected output would be
 // [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected
 // output would be [2, 3, 6].
-// arguments:array
+// REMOVE::arguments:array
 
 export const dcpChallenge2 = function() {
-    let list = arguments[0];
+    let list = arguments[0]; //REMOVE:: used for execution purposes
     return "hello";
 };
