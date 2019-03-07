@@ -3,19 +3,23 @@ import Highlight from "react-highlight";
 import "../../../node_modules/highlight.js/styles/monokai.css";
 import "./challenge-solution.scss";
 import { AppContext } from "../../AppContext";
-import { reduceFunctionGarbage } from "../../helpers/reduce-function-garbage";
+import { getRawChallenge } from "../../helpers/get-raw-challenge";
 import { calculatePerformanceTime } from "../../helpers/calculate-performance-time";
-// eslint-disable-next-line import/no-webpack-loader-syntax
-const getChallengeRaw = num =>
-    reduceFunctionGarbage(require(`!raw-loader!../../challenges/${num}.js`));
-const getChallenge = num =>
+import { generateInputFields } from "../../helpers/generate-input-fields";
+import { defaultResponse } from "../../helpers/calculate-performance-time";
+const getChallenge = challengeNumber =>
     calculatePerformanceTime(
-        require(`../../challenges/${num}.js`)[`dcpChallenge${num}`]
+        require(`../../challenges/${challengeNumber}.js`)[
+            `dcpChallenge${challengeNumber}`
+        ],
+        challengeNumber
     );
 
 export const ChallengeSolutionComponent = () => {
     const [inputs, setInputs] = useState({});
-
+    const [result, setResult] = useState(defaultResponse);
+    const evaluateFunction = value =>
+        setResult(getChallenge(value.selectedTab)(inputs));
     return (
         <AppContext.Consumer>
             {value => (
@@ -24,37 +28,34 @@ export const ChallengeSolutionComponent = () => {
                         Daily Coding Solution #{value.selectedTab}
                     </h2>
                     <p>
-                        Given a list of numbers and a number k, return whether
-                        any two numbers from the list add up to k.
+                        The following box will contain the Daily Coding Solution
+                        number {value.selectedTab}. You'll find the definition
+                        for the exercise as a comment above the function
+                        solution.
                     </p>
                     <p>
-                        For example, given [10, 15, 3, 7] and k of 17, return
-                        true since 10 + 7 is 17.
+                        You're able to execute the proposed solution by sending
+                        custom parameters to it. These parameters can be added
+                        in the <b>Try it out!</b> section. Be aware of the
+                        arguments formating as it can make the funstion to fail
                     </p>
                     <Highlight language="javascript">
-                        {getChallengeRaw(value.selectedTab)}
+                        {getRawChallenge(value.selectedTab)}
                     </Highlight>
                     <h3 className="challenge-solution__subtitle">
                         Try it out!
                     </h3>
                     <h4>Arguments</h4>
-                    <input
-                        onChange={e =>
-                            setInputs({ ...inputs, 0: e.target.value })
-                        }
-                    />
-                    <input
-                        onChange={e =>
-                            setInputs({ ...inputs, 1: e.target.value })
-                        }
-                    />
-                    <button>Send</button>
-                    {inputs[0] &&
-                        inputs[1] &&
-                        getChallenge(value.selectedTab)(
-                            inputs[0].split(" ").map(Number),
-                            inputs[1]
-                        )}
+                    {generateInputFields(value.selectedTab, setInputs, inputs)}
+                    <button
+                        type="button"
+                        onClick={() => evaluateFunction(value)}
+                    >
+                        Send
+                    </button>
+                    {`Result: ${result.result}`}
+                    {`Time: ${result.time}`}
+                    {`Error: ${result.error}`}
                 </div>
             )}
         </AppContext.Consumer>

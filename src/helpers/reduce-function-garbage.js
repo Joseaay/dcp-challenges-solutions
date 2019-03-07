@@ -1,5 +1,5 @@
-export const reduceFunctionGarbage = e =>
-    e
+export const reduceFunctionGarbage = func =>
+    func
         .split("\n")
-        .filter(l => !l.includes("arguments"))
+        .filter(line => !line.includes("REMOVE::"))
         .join("\n");
