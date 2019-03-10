@@ -9,13 +9,33 @@
     }
     &__input {
         width: 150px;
+        border-radius: 5px;
+        padding: 5px;
+        height: 25px;
+        font-size: 14px;
     }
     &__label {
-        margin: 5px 0 3px 0;
+        margin: 8px 0;
         font-size: 13px;
     }
     &__button {
         margin-top: 10px;
         width: 100px;
+        height: 27px;
+        border-radius: 5px;
+        text-transform: uppercase;
+    }
+    &__data-group {
+        display: flex;
+    }
+    &__data-group-arguments {
+        width: 50%;
+    }
+    &__data-group-results {
+        width: 50%;
+    }
+    &__error {
+        color: red;
+        font-weight: 600;
     }
 }

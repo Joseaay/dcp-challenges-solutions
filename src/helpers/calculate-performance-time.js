@@ -39,6 +39,6 @@ export const calculatePerformanceTime = (
     return {
         ...defaultResponse,
         time: initialTime - endTime,
-        result: String(returnedResult)
+        result: `${returnedResult}`
     };
 };

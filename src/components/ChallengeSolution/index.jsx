@@ -45,22 +45,42 @@ export const ChallengeSolutionComponent = () => {
                     <h3 className="challenge-solution__subtitle">
                         Try it out!
                     </h3>
-                    <h4>Arguments</h4>
-                    {generateInputFields(value.selectedTab, setInputs, inputs)}
-                    <button
-                        type="button"
-                        className="challenge-solution__button"
-                        onClick={() => evaluateFunction(value)}
-                    >
-                        Send
-                    </button>
-                    <h4>Results</h4>
-
-                    {result.result &&
-                        !result.error &&
-                        `Result: ${result.result}`}
-                    {result.time && !result.error && `Time: ${result.time}`}
-                    {result.error && `${result.error}`}
+                    <div className="challenge-solution__data-group">
+                        <div className="challenge-solution__data-group-arguments">
+                            <h4>Arguments</h4>
+                            {generateInputFields(
+                                value.selectedTab,
+                                setInputs,
+                                inputs
+                            )}
+                            <button
+                                type="button"
+                                className="challenge-solution__button"
+                                onClick={() => evaluateFunction(value)}
+                            >
+                                Send
+                            </button>
+                        </div>
+                        <div className="challenge-solution__data-group-results">
+                            <h4>Results</h4>
+                            {result.result && (
+                                <div className="challenge-solution__result">
+                                    <h5>Returned value</h5>
+                                    {result.result}
+                                    <h5>Execution time</h5>
+                                    {result.time}
+                                </div>
+                            )}
+                            {result.error && (
+                                <div className="challenge-solution__error">
+                                    {result.error && `${result.error}`}
+                                </div>
+                            )}
+                            {!result.error &&
+                                !result.result &&
+                                `  There's no result yet`}
+                        </div>
+                    </div>
                 </div>
             )}
         </AppContext.Consumer>

@@ -15,5 +15,7 @@
 
 export const dcpChallenge2 = function() {
     let list = arguments[0]; //REMOVE:: used for execution purposes
-    return "hello";
+    return list.map((_, i) =>
+        list.filter((_, fi) => fi !== i).reduce((a, b) => a * b)
+    );
 };
