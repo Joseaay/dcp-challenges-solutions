@@ -3,7 +3,10 @@ import React from "react";
 import { findArguments } from "./find-arguments";
 const inputTypes = (inputType, index, updateFunc, inputs) => {
     return (
-        <div className="challenge-solution__arguments-inputs">
+        <div
+            className="challenge-solution__arguments-inputs"
+            key={`arguments-inputs${index}`}
+        >
             <label className="challenge-solution__label">
                 {
                     {
