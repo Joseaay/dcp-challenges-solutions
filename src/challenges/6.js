@@ -16,8 +16,4 @@
 
 // REMOVE::arguments:number,number
 
-export const dcpChallenge5 = function() {
-    let a = arguments[0]; //REMOVE:: used for execution purposes
-    let b = arguments[1]; //REMOVE:: used for execution purposes
-    return "TODO";
-};
+export const dcpChallenge6 = (a, b) => "TODO";

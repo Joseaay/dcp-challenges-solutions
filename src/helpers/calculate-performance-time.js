@@ -8,14 +8,15 @@ export const defaultResponse = {
 
 const _parseChallengeArguments = value => ({
     array: value.split(",").map(Number),
-    number: Number(value)
+    number: Number(value),
+    string: String(value)
 });
 
 export const calculatePerformanceTime = (
     funcToTest,
     challengeNumber
 ) => inputsValues => {
-    const initialTime = new Date();
+    const initialTime = new Date().getTime();
     const challengeArguments = findArguments(challengeNumber);
     let returnedResult;
     try {
@@ -29,13 +30,14 @@ export const calculatePerformanceTime = (
         });
         returnedResult = funcToTest(...generatedArgs);
     } catch (error) {
+        console.error(error);
         return {
             ...defaultResponse,
             error:
                 "ERROR:: Arguments passed have probably wrong format. Please check and try again."
         };
     }
-    const endTime = new Date();
+    const endTime = new Date().getTime();
     return {
         ...defaultResponse,
         time: initialTime - endTime,

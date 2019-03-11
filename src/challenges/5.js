@@ -19,11 +19,8 @@
 
 const cons = (a, b) => [a, b];
 
-export const dcpChallenge5 = function() {
-    let a = arguments[0]; //REMOVE:: used for execution purposes
-    let b = arguments[1]; //REMOVE:: used for execution purposes
-    return `Car: ${car(cons(a, b))}, Cdr: ${cdr(cons(a, b))}`;
-};
+export const dcpChallenge5 = (a, b) =>
+    `Car: ${car(cons(a, b))}, Cdr: ${cdr(cons(a, b))}`;
 
 const car = pair => pair[0];
 const cdr = pair => pair[1];

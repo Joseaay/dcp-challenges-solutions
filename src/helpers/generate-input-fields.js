@@ -9,7 +9,9 @@ const inputTypes = (inputType, index, updateFunc, inputs) => {
                     {
                         array:
                             "ARRAY: elements separated by comas, e.g. 1,2,3,4 => [1,2,3,4]",
-                        number: "NUMBER: single number, e.g. 1 => Number(1)"
+                        number: "NUMBER: single number, e.g. 1 => Number(1)",
+                        string:
+                            "STRING: plain string, e.g. 'abc123' => String('abc123')"
                     }[inputType]
                 }
             </label>

@@ -13,9 +13,7 @@
 // output would be [2, 3, 6].
 // REMOVE::arguments:array
 
-export const dcpChallenge2 = function() {
-    let list = arguments[0]; //REMOVE:: used for execution purposes
-    return list.map((_, i) =>
+export const dcpChallenge2 = list =>
+    list.map((_, i) =>
         list.filter((_, fi) => fi !== i).reduce((a, b) => a * b)
     );
-};

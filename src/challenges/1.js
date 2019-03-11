@@ -11,8 +11,4 @@
 // is 17.
 // REMOVE::arguments:array,number
 
-export const dcpChallenge1 = function() {
-    let list = arguments[0]; //REMOVE:: used for execution purposes
-    let k = arguments[1]; //REMOVE:: used for execution purposes
-    return list.some(e => list.includes(k - e));
-};
+export const dcpChallenge1 = (list, k) => list.some(e => list.includes(k - e));

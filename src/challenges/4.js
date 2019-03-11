@@ -15,8 +15,7 @@
 //You can modify the input array in-place.
 // REMOVE::arguments:array
 
-export const dcpChallenge4 = function() {
-    let list = arguments[0]; //REMOVE:: used for execution purposes
+export const dcpChallenge4 = list => {
     const lowestNumber = list.reduce((a, b) =>
         a && b >= 0 ? (a < b ? a : b) : 0
     );

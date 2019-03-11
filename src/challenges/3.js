@@ -21,7 +21,4 @@
 // assert deserialize(serialize(node)).left.left.val == 'left.left'
 // REMOVE::arguments:array
 
-export const dcpChallenge3 = function() {
-    let list = arguments[0]; //REMOVE:: used for execution purposes
-    return "TODO";
-};
+export const dcpChallenge3 = list => "TODO";

@@ -4,7 +4,7 @@ import { TabComponent } from "../Tab/Tab";
 import { contextConsumer } from "../../hoc/context-consumer.hoc";
 
 export const Tabs = ({ selectedTab }) => {
-    const [tabs] = useState(6);
+    const [tabs] = useState(11);
     const [tabPage, setTabPage] = useState(0);
 
     const prevPage = _ => (tabPage < 0 ? setTabPage(tabPage + 1000) : null);
