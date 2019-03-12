@@ -7,16 +7,19 @@ export const Tabs = ({ selectedTab }) => {
     const [tabs] = useState(11);
     const [tabPage, setTabPage] = useState(0);
 
-    const prevPage = _ => (tabPage < 0 ? setTabPage(tabPage + 1000) : null);
+    const nextPageButtonAvailable = () =>
+        Math.abs(tabPage) < Math.floor(tabs / 10) * 1000;
+    const prevPageButtonAvailable = () => tabPage < 0;
+
+    const prevPage = _ =>
+        prevPageButtonAvailable() ? setTabPage(tabPage + 1000) : null;
 
     const nextPage = _ =>
-        Math.abs(tabPage) < Math.floor(tabs / 10) * 1000
-            ? setTabPage(tabPage - 1000)
-            : null;
+        nextPageButtonAvailable() ? setTabPage(tabPage - 1000) : null;
 
     return (
         <div className="tabs">
-            {tabs > 10 && (
+            {prevPageButtonAvailable() && (
                 <div
                     className="tabs__arrow tabs__arrow--left"
                     onClick={prevPage}
@@ -32,7 +35,7 @@ export const Tabs = ({ selectedTab }) => {
                     }}
                 />
             ))}
-            {tabs > 10 && (
+            {nextPageButtonAvailable() && (
                 <div
                     className="tabs__arrow tabs__arrow--right"
                     onClick={nextPage}
