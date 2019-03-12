@@ -16,7 +16,7 @@ export const calculatePerformanceTime = (
     funcToTest,
     challengeNumber
 ) => inputsValues => {
-    const initialTime = new Date().getTime();
+    const initialTime = window.performance.now();
     const challengeArguments = findArguments(challengeNumber);
     let returnedResult;
     try {
@@ -37,10 +37,10 @@ export const calculatePerformanceTime = (
                 "ERROR:: Arguments passed have probably wrong format. Please check and try again."
         };
     }
-    const endTime = new Date().getTime();
+    const endTime = window.performance.now();
     return {
         ...defaultResponse,
-        time: initialTime - endTime,
+        time: endTime - initialTime,
         result: `${returnedResult}`
     };
 };

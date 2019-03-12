@@ -68,7 +68,7 @@ export const ChallengeSolutionComponent = () => {
                                     <h5>Returned value</h5>
                                     {result.result}
                                     <h5>Execution time</h5>
-                                    {result.time}
+                                    {`${result.time} ms`}
                                 </div>
                             )}
                             {result.error && (
