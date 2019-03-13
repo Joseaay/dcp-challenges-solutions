@@ -22,8 +22,9 @@ class App extends Component {
         return (
             <AppContext.Provider value={this.state}>
                 <div className="dcp-challenges-solutions-app">
-                    <h1>Daily Coding Challenge</h1>
-                    <h2>Solutions</h2>
+                    <h1 className="center">
+                        Daily Coding Challenge - Javascript Solutions
+                    </h1>
                     <BoxComponent />
                 </div>
             </AppContext.Provider>
