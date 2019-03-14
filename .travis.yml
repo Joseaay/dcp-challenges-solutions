@@ -13,4 +13,4 @@ before_install:
 install:
     - npm install
 script:
-    - npm test:coverage -e TRAVIS_NODE_VERSION
+    - npm run test:coverage -e TRAVIS_NODE_VERSION
