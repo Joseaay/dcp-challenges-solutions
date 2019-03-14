@@ -9,7 +9,7 @@ import { generateInputFields } from "../../helpers/generate-input-fields";
 import { defaultResponse } from "../../helpers/calculate-performance-time";
 const getChallenge = challengeNumber =>
     calculatePerformanceTime(
-        require(`../../challenges/${challengeNumber}.js`)[
+        require(`../../../challenges/${challengeNumber}.js`)[
             `dcpChallenge${challengeNumber}`
         ],
         challengeNumber

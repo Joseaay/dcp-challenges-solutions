@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-jest.mock(`!raw-loader!../challenges/1.js`, () => "hello-raw-data", {
+jest.mock(`!raw-loader!../../challenges/1.js`, () => "hello-raw-data", {
     virtual: true
 });
 it("renders without crashing", () => {
