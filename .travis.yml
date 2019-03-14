@@ -14,3 +14,4 @@ install:
     - npm install
 script:
     - npm run test:coverage -e TRAVIS_NODE_VERSION
+    - npm run deploy
