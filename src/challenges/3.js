@@ -19,6 +19,38 @@
 //
 // node = Node('root', Node('left', Node('left.left')), Node('right'))
 // assert deserialize(serialize(node)).left.left.val == 'left.left'
-// REMOVE::arguments:array
 
-export const dcpChallenge3 = list => "TODO";
+class Node {
+    constructor(val, left, right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+const serialize = node => {
+    let nodeArray = [];
+    node
+        ? nodeArray.push(node.val, serialize(node.left), serialize(node.right))
+        : nodeArray.push("void");
+    return nodeArray.toString();
+};
+
+const deserialize = string => _deserialize(string.split(","));
+
+const _deserialize = nodeArray => {
+    if (nodeArray.length === 0) return undefined;
+    const value = nodeArray.shift();
+    return value !== "void"
+        ? new Node(value, _deserialize(nodeArray), _deserialize(nodeArray))
+        : new Node();
+};
+
+export const dcpChallenge3 = () => {
+    let node = new Node(
+        "root",
+        new Node("left", new Node("left.left")),
+        new Node("right")
+    );
+    return deserialize(serialize(node)).left.left.val === "left.left";
+};
