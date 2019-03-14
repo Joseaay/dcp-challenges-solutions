@@ -18,12 +18,14 @@ const inputTypes = (inputType, index, updateFunc, inputs) => {
                     }[inputType]
                 }
             </label>
-            <input
-                className="challenge-solution__input"
-                onChange={e =>
-                    updateFunc({ ...inputs, [index]: e.target.value })
-                }
-            />
+            {inputType && (
+                <input
+                    className="challenge-solution__input"
+                    onChange={e =>
+                        updateFunc({ ...inputs, [index]: e.target.value })
+                    }
+                />
+            )}
         </div>
     );
 };
