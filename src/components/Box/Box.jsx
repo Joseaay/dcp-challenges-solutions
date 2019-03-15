@@ -1,7 +1,7 @@
 import React from "react";
 import "./box.scss";
 import { TabsComponent } from "../common/Tabs/Tabs";
-import { ChallengeSolutionComponent } from "../ChallengeSolution";
+import { ChallengeSolutionComponent } from "../ChallengeSolution/ChallengeSolution";
 
 export const BoxComponent = () => (
     <div className="box">
