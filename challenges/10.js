@@ -7,4 +7,6 @@
 // an integer n, and calls f after n milliseconds.
 // REMOVE::arguments:number
 
-export const dcpChallenge9 = number => number;
+const callbackFunction = _ => alert("Here I am!");
+
+export const dcpChallenge10 = n => setTimeout(_ => callbackFunction(), n);
