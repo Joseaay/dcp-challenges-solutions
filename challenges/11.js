@@ -9,7 +9,7 @@
 //
 // For example, given the query string de and the set of strings
 // [dog, deer, deal], return [deer, deal].
-// REMOVE::arguments:string,array
+// REMOVE::arguments:string,arrayString
 
 export const dcpChallenge11 = (s, a) =>
     a.filter(

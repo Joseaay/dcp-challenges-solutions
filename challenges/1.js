@@ -9,6 +9,6 @@
 // Example:
 // Given [10, 15, 3, 7] and k of 17, return true since 10 + 7
 // is 17.
-// REMOVE::arguments:array,number
+// REMOVE::arguments:arrayNumber,number
 
 export const dcpChallenge1 = (list, k) => list.some(e => list.includes(k - e));

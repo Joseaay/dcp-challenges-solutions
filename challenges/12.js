@@ -20,7 +20,7 @@
 // you could climb any number from a set of positive integers X?
 // For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps
 // at a time.
-// REMOVE::arguments:number,array
+// REMOVE::arguments:number,arrayNumber
 
 export const dcpChallenge12 = (n, list) => {
     let tree = [];

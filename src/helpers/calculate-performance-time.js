@@ -7,7 +7,8 @@ export const defaultResponse = {
 };
 
 const _parseChallengeArguments = value => ({
-    array: value.split(",").map(Number),
+    arrayNumber: value.split(",").map(Number),
+    arrayString: value.split(",").map(String),
     number: Number(value),
     string: String(value)
 });

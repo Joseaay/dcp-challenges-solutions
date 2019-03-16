@@ -10,8 +10,10 @@ const inputTypes = (inputType, index, updateFunc, inputs) => {
             <label className="challenge-solution__label">
                 {
                     {
-                        array:
+                        arrayNumber:
                             "ARRAY: elements separated by comas, e.g. 1,2,3,4 => [1,2,3,4]",
+                        arrayString:
+                            "ARRAY: elements separated by comas, e.g. a,b,c,d => ['a','b','c','d']",
                         number: "NUMBER: single number, e.g. 1 => Number(1)",
                         string:
                             "STRING: plain string, e.g. 'abc123' => String('abc123')"

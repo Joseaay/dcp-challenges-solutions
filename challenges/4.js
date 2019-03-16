@@ -13,7 +13,7 @@
 // [1, 2, 0] should give 3.
 //
 //You can modify the input array in-place.
-// REMOVE::arguments:array
+// REMOVE::arguments:arrayNumber
 
 export const dcpChallenge4 = list => {
     const lowestNumber = list.reduce((a, b) =>
