@@ -4,7 +4,7 @@ import { TabComponent } from "../Tab/Tab";
 import { contextConsumer } from "../../hoc/context-consumer.hoc";
 
 export const Tabs = ({ selectedTab }) => {
-    const [tabs] = useState(11);
+    const [tabs] = useState(12);
     const [tabPage, setTabPage] = useState(0);
 
     const nextPageButtonAvailable = () =>

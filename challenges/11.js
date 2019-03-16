@@ -11,4 +11,7 @@
 // [dog, deer, deal], return [deer, deal].
 // REMOVE::arguments:string,array
 
-export const dcpChallenge9 = (string, array) => "TODO";
+export const dcpChallenge11 = (s, a) =>
+    a.filter(
+        queryString => s === queryString.slice(0, s.length - queryString.length)
+    );
