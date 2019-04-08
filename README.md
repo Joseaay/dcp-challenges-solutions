@@ -54,6 +54,10 @@ Jose Antonio Ayllón Llamas
 <br>
 **🐦 Twitter**: [@joseaay](https://twitter.com/joseaay)
 <br>
+**🖇 LinkedIn**: [https://www.linkedin.com/in/jose-antonio-ayll%C3%B3n-llamas-b2a387120/](https://www.linkedin.com/in/jose-antonio-ayll%C3%B3n-llamas-b2a387120/)
+<br>
+**📚 StackOverflow**: [https://stackoverflow.com/users/6627524/jose-a-ayll%C3%B3n](https://stackoverflow.com/users/6627524/jose-a-ayll%C3%B3n)
+<br>
 
 ## Contributing
 
