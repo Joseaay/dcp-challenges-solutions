@@ -46,8 +46,14 @@ yarn start
 
 ## Meta
 
-Jose Antonio Ayllón Llamas – [@joseaay](https://twitter.com/dbader_org) – joseayllonllamas@hotmail.com
-[https://github.com/Joseaay](https://github.com/Joseaay)
+Jose Antonio Ayllón Llamas
+
+**💻 Website**: [https://www.joseayllonllamas.com/](https://www.joseayllonllamas.com/)
+<br>
+**📧 E-mail**: joseayllonllamas@hotmail.com
+<br>
+**🐦 Twitter**: [@joseaay](https://twitter.com/joseaay)
+<br>
 
 ## Contributing
 
