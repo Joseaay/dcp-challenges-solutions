@@ -1,6 +1,8 @@
 # 📬 Daily Coding Problem - Javascript Solutions
 
 [![Build Status][travis-image]][travis-url]
+[![Maintainability][Maintainability-image]][Maintainability-url]
+[![codebeat badge][codebeat-image]][codebeat-url]
 [![codecov][codecov-image]][codecov-url]
 [![License: GPL v3][license-image]][license-url]
 
@@ -75,3 +77,7 @@ Jose Antonio Ayllón Llamas
 [codecov-url]: https://codecov.io/gh/Joseaay/dcp-challenges-solutions
 [license-image]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [license-url]: https://www.gnu.org/licenses/gpl-3.0
+[Maintainability-image]: https://api.codeclimate.com/v1/badges/91e5a62f28807a72207a/maintainability
+[Maintainability-url]: https://codeclimate.com/github/Joseaay/dcp-challenges-solutions/maintainability
+[codebeat-image]: https://codebeat.co/badges/818b2f7a-a616-4989-b843-cfc1aa288e01
+[codebeat-url]: https://codebeat.co/projects/github-com-joseaay-dcp-challenges-solutions-master
