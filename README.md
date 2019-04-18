@@ -26,7 +26,7 @@ Clone the repository using git:
 git clone https://github.com/Joseaay/dcp-challenges-solutions.git
 ```
 
-Install dependencies using [`yarn`](https://yarnpkg.com/en/package/jest):
+Install dependencies using [`yarn`](https://yarnpkg.com):
 
 ```bash
 yarn
